@@ -8,7 +8,7 @@ $('form').on('submit', function(evt) {
 
 async function getGif(term){
     try{
-    const res = await axios.get('http://api.giphy.com/v1/gifs/search', {params:{q: term, api_key: APIkey}})
+    const res = await axios.get('https://api.giphy.com/v1/gifs/search', {params:{q: term, api_key: APIkey}})
     const rNum = Math.floor(Math.random() * 50) + 1
     const gifUrl = res.data.data[rNum].images.fixed_height.url;
     const $img = $('<img>').attr('src', gifUrl).attr('class', 'mx-1 my-1 img-fluid img-thumbnail')
