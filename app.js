@@ -3,8 +3,10 @@ const APIkey = 'zoXG3TZxZsDfbNY56jatMqyS1Ut75gGO'
 $('form').on('submit', async function(evt) {
     evt.preventDefault();
     let gif = await getGif($('#search').val());
-    appendDom(gif)
     $('#search').val('')
+    if(gif){
+        appendDom(gif)
+    }
 })
 
 async function getGif(term){
